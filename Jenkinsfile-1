@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('git clone') {
       steps {
-        git 'https://github.com/Hemantakumarpati/sonar-test.git' 
+        git 'https://github.com/Hemantakumarpati/sonar-test.git' branch: main
       }
     }
     stage('Scan') {
