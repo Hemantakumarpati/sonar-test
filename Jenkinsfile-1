@@ -4,6 +4,11 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   stages {
+    stage('git clone') {
+      steps {
+        git clone "ssh://git@mywebsite.com/myrepo.git"
+      }
+    }
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'SonarQube') { 
